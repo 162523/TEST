@@ -5,13 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo PC</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <header>
-    <h1>Chào mừng đến với bộ tộc Tày!</h1>
-  </header>
   <body>
-    <div id="root"></div>
-    <h2>Có một con chos cao bằng bộ PC</h2>
-    <script type="module" src="/src/main.jsx"></script>
+  <header>
+    <h1>Chào mừng đến với bộ tộc Tày! Làm gì hôm nay nào?</h1>
+  </header>
+  <main>
+    <div class="input-section">
+      <input type="text" id="todoInput" placeholder="Làm gì đê...">
+      <button onclick="addTodo()">Thêm tí việc</button>
+    </div>
+    <div id="todoList"></div>
+  </main>
+  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 Bộ tộc Tày. Tất cả anh em hãy trốn Nghĩa vụ quân sự!</p>
+  </footer>
   </body>
 </html>
