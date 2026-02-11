@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-export default function TodoList({ todos, onDelete, onToggle }) {
+export default function TodoList({ todos, onDelete, onToggle, onUpdate }) {
   if (!todos.length) {
     return <p className="empty">Hiện đang thất nghiệp, ăn bám, hoan hô 🎉</p>;
   }
@@ -13,6 +13,7 @@ export default function TodoList({ todos, onDelete, onToggle }) {
           todo={todo}
           onDelete={onDelete}
           onToggle={onToggle}
+          onUpdate={onUpdate}
         />
       ))}
     </div>

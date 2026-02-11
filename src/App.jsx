@@ -4,13 +4,13 @@ import useTodos from "./hooks/useTodos";
 import "./styles/todo.css";
 
 export default function App() {
-  const { todos, add, remove, toggle } = useTodos();
+  const { todos, add, remove, toggle, update } = useTodos();
 
   const completed = todos.filter(t => t.completed).length;
 
   return (
     <div className="container">
-      <h1 className="title">📝 Todo App</h1>
+      <h1 className="title">📝 Bạn thì kinh zồi</h1>
 
       <TodoForm onAdd={add} />
 
@@ -18,6 +18,7 @@ export default function App() {
         todos={todos}
         onDelete={remove}
         onToggle={toggle}
+        onUpdate={update}
       />
 
       <div className="counter">

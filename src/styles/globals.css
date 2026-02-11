@@ -5,7 +5,11 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHlhbTE2N2t1d2ZhbmN6eXpyNGlsZjZyaWdnb2k3MHY5dXAxbXBiMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs81rDuEz9ioJzAA/giphy.gif");
+  /*background-image: url("https://24hstore.vn/upload_images/images/2019/11/14/anh-gif-3-min.gif");
+  /*background-image: url("https://blog.tqdesign.vn/wp-content/uploads/2017/07/hinh-anh-dong-xu-huong-quang-cao-moi-1.gif");*/
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   display: flex;
   justify-content: center;
