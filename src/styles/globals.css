@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

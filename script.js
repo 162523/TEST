@@ -37,6 +37,10 @@ function displayTodos() {
         todoItem.innerHTML = `
             <div class="todo-text">${todo.text}</div>
             <div class="todo-actions">
+            <label>
+                <input type="checkbox">
+                <span>Done</span>
+            </label>
                 <button class="edit-btn" onclick="editTodo(${todo.id})">Edit</button>
                 <button class="delete-btn" onclick="deleteTodo(${todo.id})">Delete</button>
             </div>
@@ -78,3 +82,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
