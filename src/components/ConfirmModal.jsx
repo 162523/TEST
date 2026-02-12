@@ -7,9 +7,9 @@ export default function ConfirmModal({ open, onClose, onConfirm }) {
         <p>Vũ muốn trốn việc hả Vũ, không xong với anh đâu Vũ nhá?</p>
 
         <div className="modal-actions">
-          <button onClick={onClose}>Để lại</button>
+          <button onClick={onClose}>Keep</button>
           <button className="danger" onClick={onConfirm}>
-            Ok cook luôn
+            Remove
           </button>
         </div>
       </div>

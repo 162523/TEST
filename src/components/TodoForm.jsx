@@ -15,9 +15,9 @@ export default function TodoForm({ onAdd }) {
         value={text}
         onChange={(e) => setText(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-        placeholder="Làm giề sủa vào đây..."
+        placeholder="Donate hay gì đó đê..."
       />
-      <button onClick={handleSubmit}>Thêm</button>
+      <button onClick={handleSubmit}>Amazing</button>
     </div>
   );
 }

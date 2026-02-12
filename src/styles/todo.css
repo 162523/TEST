@@ -1,162 +1,190 @@
-/* ===== Container ===== */
-.container {
-  width: 620px;
-  position: relative;
-  transform: translateX(-90%);
-  background: white;
-  padding: 32px;
-  border-radius: 20px;
-  box-shadow:
-    0 10px 25px rgba(0,0,0,0.15),
-    0 2px 6px rgba(0,0,0,0.08);
 
+:root {
+  --bg: #ffffff;
+  --text: #222;
+  --card: #f7f7f7;
+  --border: #ddd;
+  --primary: #4caf50;
+}
+
+body[data-theme="dark"] {
+  --bg: #1e1f24;
+  --text: #f1f1f1;
+  --card: #2a2b30;
+  --border: #3a3b40;
+  --primary: #66bb6a;
+}
+
+/* container */
+
+.container {
+  width: 720px;
+  background: var(--bg);
+  color: var(--text);
+
+  padding: 28px;
+  border-radius: 20px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
   transition: 0.3s;
 }
 
-.title {
-  text-align: center;
-  margin-bottom: 25px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+/* top bar */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* ===== Input ===== */
+.theme-btn {
+  font-size: 25px;
+  background: none;
+}
+
+/* input */
+
 .input-section {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
-.input-section input {
+input {
   flex: 1;
-  padding: 12px 14px;
+  padding: 10px;
   border-radius: 10px;
-  border: 1px solid #ddd;
+  border: 3px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+}
+
+/* filter */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters button {
+  background: var(--card);
+  padding: 6px 10px;
+  border-radius: 8px;
   font-size: 14px;
-  transition: 0.2s;
+  border: 2px solid var(--border);
 }
 
-.input-section input:focus {
-  outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 0 3px rgba(76,175,80,0.15);
-}
-
-/* ===== Buttons ===== */
-button {
-  padding: 10px 14px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 500;
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: translateY(-1px);
-}
-
-.input-section button {
-  background: #4caf50;
+.filters .active {
+  background: var(--primary);
   color: white;
 }
 
-.delete-btn {
-  background: #ff5252;
-  color: rgb(176, 9, 9);
-}
+/* list */
 
-.actions button {
-  background: #e0e0e0;
-}
-
-/* ===== List ===== */
 .todo-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* ===== Item ===== */
+/* item */
+
 .todo-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 14px;
+  background: var(--card);
+  padding: 10px 14px;
   border-radius: 12px;
-  background: #f7f7f7;
-
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  border: solid 1px var(--border);
   transition: 0.2s;
 }
 
 .todo-item:hover {
-  background: #eeeeee;
   transform: translateY(-2px);
 }
 
-/* left */
-.todo-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* animation */
+.fade-in {
+  animation: fadeSlide 1.5s ease;
 }
 
-/* text */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .done {
   text-decoration: line-through;
   opacity: 0.5;
 }
 
-/* edit */
-.edit-input {
-  padding: 6px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+/* button */
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 10px;
+  transition: 0.2s;
+  background: #dce78d;
+  margin: 0 2px;
+  font-size: 14px;
 }
 
-/* ===== Counter ===== */
-.counter {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 13px;
-  opacity: 0.7;
+button:hover {
+  transform: translateY(-1px);
 }
 
-/* ===== Empty ===== */
-.empty {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.5;
+.delete-btn {
+  background: #ff5252;
+  color: white;
 }
 
-/* ===== Modal ===== */
+/* modal */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.45);
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(4px);
 }
 
 .modal {
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-  width: 260px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  border-radius: 12px;
 }
 
-.modal-actions {
+/*counter */
+
+.counter {
+  text-align: center;
+  margin-top: 15px;
+  opacity: 0.7;
+}
+
+.text-block {
   display: flex;
-  justify-content: space-between;
-  margin-top: 18px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.danger {
-  background: #ff5252;
-  color: white;
+.time {
+  font-size: 12px;
+  opacity: 0.6;
 }

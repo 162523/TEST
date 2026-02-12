@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ConfirmModal from "./ConfirmModal";
+import { Reorder, motion } from "framer-motion";
 
 export default function TodoItem({ todo, onDelete, onToggle, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -14,7 +15,7 @@ export default function TodoItem({ todo, onDelete, onToggle, onUpdate }) {
 
   return (
     <>
-      <div className="todo-item">
+      <div className="todo-item fade-in">
         <label className="todo-left">
           <input
             type="checkbox"
@@ -31,17 +32,23 @@ export default function TodoItem({ todo, onDelete, onToggle, onUpdate }) {
               autoFocus
             />
           ) : (
-            <span className={todo.completed ? "done" : ""}>
-              {todo.text}
-            </span>
+            <div className="text-block">
+              <span className={todo.completed ? "done" : ""}>
+                {todo.text}
+              </span>
+
+              <small className="time">
+                {new Date(todo.createdAt).toLocaleTimeString()}
+              </small>
+            </div>
           )}
         </label>
 
         <div className="actions">
           {isEditing ? (
-            <button onClick={saveEdit}>WOW, Amazing, đẹp này, 10 điểm, chốt luôn này</button>
+            <button onClick={saveEdit}>✔</button>
           ) : (
-            <button onClick={() => setIsEditing(true)}>Sửa luôn</button>
+            <button onClick={() => setIsEditing(true)}>Edit</button>
           )}
 
           <button

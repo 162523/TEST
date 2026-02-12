@@ -15,9 +15,10 @@ export default function useTodos() {
   }, [todos]);
 
   const add = (text) => {
+    const now = new Date();
     setTodos([
       ...todos,
-      { id: Date.now(), text, completed: false }
+      { id: Date.now(), text, completed: false, createdAt: now.toISOString() },
     ]);
   };
 
@@ -41,6 +42,10 @@ export default function useTodos() {
       )
     );
   };
+  /*reorder
+  const reorder = (newOrder) => {
+    setTodos(newOrder);
+  }*/
 
   return { todos, add, remove, toggle, update };
 }

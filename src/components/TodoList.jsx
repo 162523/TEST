@@ -2,7 +2,7 @@ import TodoItem from "./TodoItem";
 
 export default function TodoList({ todos, onDelete, onToggle, onUpdate }) {
   if (!todos.length) {
-    return <p className="empty">Hiện đang thất nghiệp, ăn bám, hoan hô 🎉</p>;
+    return <p className="empty">Chưa cần làm gì 🎉</p>;
   }
 
   return (
