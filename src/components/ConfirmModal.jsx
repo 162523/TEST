@@ -4,7 +4,7 @@ export default function ConfirmModal({ open, onClose, onConfirm }) {
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <p>Vũ muốn trốn việc hả Vũ, không xong với anh đâu Vũ nhá?</p>
+        <p>Are you sure you want to remove this task?</p>
 
         <div className="modal-actions">
           <button onClick={onClose}>Keep</button>

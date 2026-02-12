@@ -18,7 +18,7 @@ body[data-theme="dark"] {
 /* container */
 
 .container {
-  width: 720px;
+  width: 860px;
   background: var(--bg);
   color: var(--text);
 
@@ -50,7 +50,7 @@ body[data-theme="dark"] {
   margin: 20px 0px;
 }
 
-input {
+.input-section input {
   flex: 1;
   padding: 10px;
   border-radius: 10px;
@@ -87,7 +87,7 @@ input {
 .todo-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 /* item */
@@ -107,6 +107,21 @@ input {
 
 .todo-item:hover {
   transform: translateY(-2px);
+}
+
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+/* checkbox đẹp hơn */
+.todo-left input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;;
 }
 
 /* animation */

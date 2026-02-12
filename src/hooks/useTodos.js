@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 export default function useTodos() {
   const [todos, setTodos] = useState([]);
@@ -20,12 +21,14 @@ export default function useTodos() {
       ...todos,
       { id: Date.now(), text, completed: false, createdAt: now.toISOString() },
     ]);
+    toast.success(" New task added successfully!");
   };
 
   const remove = (id) => {
     setTodos(todos.filter(t => t.id !== id));
+    toast.error("🗑️ Task removed successfully!");
   };
-
+ 
   const toggle = (id) => {
     setTodos(
       todos.map(t =>
@@ -41,6 +44,7 @@ export default function useTodos() {
         t.id === id ? { ...t, text: newText } : t
       )
     );
+    toast.info("✏️ Task updated successfully!");
   };
   /*reorder
   const reorder = (newOrder) => {

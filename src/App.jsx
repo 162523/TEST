@@ -2,6 +2,8 @@ import { useState, useMemo, useEffect } from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import useTodos from "./hooks/useTodos";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./styles/todo.css";
 
 export default function App() {
@@ -29,10 +31,11 @@ export default function App() {
   const completed = todos.filter(t => t.completed).length;
 
   return (
+    <>
     <div className="container">
       {/* header */}
       <div className="top-bar">
-        <h1 className="title">📝 Bạn thì kinh zồi</h1>
+        <h1 className="title">📝 “Either you run the day or the day runs you.”</h1>
 
         <button
           className="theme-btn"
@@ -80,5 +83,15 @@ export default function App() {
         Done: {completed} | Left: {todos.length - completed}
       </div>
     </div>
+    <ToastContainer
+    position="top-center"
+    autoClose={3000}
+    hideProgressBar
+    newestOnTop
+    closeOnClick
+    pauseOnHover
+    theme="colored"
+    />
+    </>
   );
 }
